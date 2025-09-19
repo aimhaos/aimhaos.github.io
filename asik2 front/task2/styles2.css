@@ -1,0 +1,96 @@
+﻿:root {
+    --bg: #f4f5f7;
+    --text: #1f2937;
+    --muted: #555;
+    --card: #fff;
+    --border: #e5e7eb;
+    --header: #000000;
+    --container: 980px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.site-header {
+    background: var(--header);
+    color: #fff;
+    padding: 16px 0;
+    text-align: center;
+}
+
+    .site-header h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.content-wrap {
+    padding: 40px 0;
+    display: grid;
+    gap: 24px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.centered {
+    display: block;
+    margin: 0 auto 12px;
+    max-width: 420px;
+}
+
+.portrait {
+    width: 240px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    margin: 0 auto 12px;
+}
+
+.card h2 {
+    margin: 6px 0 8px;
+}
+
+.card ul {
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.footer {
+    background: #000000;
+    color: #ddd;
+    padding: 14px 0;
+    margin-top: 20px;
+    bottom: 0;
+}
+
+    .footer p {
+        text-align: center;
+    }

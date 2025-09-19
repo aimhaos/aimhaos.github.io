@@ -1,0 +1,142 @@
+﻿:root {
+    --bg: #f7f7fb;
+    --header: #2b6cb0;
+    --header-text: #fff;
+    --nav: #2d2f33;
+    --nav-text: #fff;
+    --sidebar-bg: #e9eef7;
+    --content-bg: #fff;
+    --border: #d0d5db;
+    --text: #1f2937;
+    --link: #2b6cb0;
+    --link-hover: #124e8c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.site-header {
+    background: var(--header);
+    color: var(--header-text);
+    padding: 20px 0;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+.nav-bar {
+    background: var(--nav);
+    padding: 10px 0;
+}
+
+    .nav-bar .container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+.nav-link {
+    color: var(--nav-text);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+    .nav-link:hover,
+    .nav-link:focus {
+        background: rgba(255,255,255,0.15);
+    }
+
+.two-column-layout {
+    position: relative;
+    padding: 20px 0 40px;
+    min-height: 420px;
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 240px;
+    padding: 16px;
+    background: var(--sidebar-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    height: 260px;
+}
+
+.sidebar-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sidebar-list li {
+        margin: 8px 0;
+    }
+
+    .sidebar-list a {
+        text-decoration: none;
+        color: var(--link);
+    }
+
+        .sidebar-list a:hover {
+            text-decoration: underline;
+            color: var(--link-hover);
+        }
+
+.content {
+    margin-left: 270px;
+    padding: 16px;
+    background: var(--content-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+    .content h2, .content h3 {
+        margin-top: 0;
+    }
+
+.panel {
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.footer {
+    background: #111;
+    color: #ddd;
+    padding: 14px 0;
+    margin-top: 20px;
+    bottom:0;
+}
+.footer p {
+    text-align: center;
+    
+}
