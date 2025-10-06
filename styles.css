@@ -1,0 +1,95 @@
+/* styles.css — минималистично, черно/белая/серая гамма */
+
+/* Базовые переменные */
+:root{
+  --bg: #000;         /* черный */
+  --white: #fff;
+  --gray: #e5e5e5;
+  --gray-dark: #bdbdbd;
+  --text: #fff;
+  --card-bg: #fff;
+  --card-text: #111;
+}
+
+/* Сброс простейший */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Заголовки секций */
+.header { background: var(--bg); }
+.site-title { margin: 0; font-size: 1.6rem; }
+.site-sub { margin: 4px 0 0; color: var(--gray-dark); font-size: 0.9rem; }
+
+/* Общие контейнеры */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* Section titles */
+.section-title { font-size: 1.2rem; margin-bottom: 12px; color: var(--white); }
+
+/* ===== Part 1: Typography (Task 0) ===== */
+
+/* Базовые размеры (desktop по умолчанию) */
+.demo-h1 { font-size: 2rem; margin: 8px 0; color: var(--white); }
+.demo-h2 { font-size: 1.4rem; margin: 6px 0; color: var(--gray); }
+.demo-p { font-size: 1rem; color: var(--gray); line-height: 1.5; }
+
+/* Media queries: tablet and mobile */
+/* Tablet: up to 992px */
+@media (max-width: 991.98px) {
+  .demo-h1 { font-size: 1.6rem; }
+  .demo-h2 { font-size: 1.2rem; }
+  .demo-p { font-size: 0.95rem; }
+  .site-title { font-size: 1.4rem; }
+}
+
+/* Mobile: up to 576px */
+@media (max-width: 575.98px) {
+  .demo-h1 { font-size: 1.25rem; }
+  .demo-h2 { font-size: 1.05rem; }
+  .demo-p { font-size: 0.95rem; }
+  .site-title { font-size: 1.2rem; }
+}
+
+/* ===== Part 1: Boxes (Task 1) — pure CSS (no Bootstrap) ===== */
+
+.boxes {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Each box basic style */
+.box {
+  flex: 1 1 0;
+  min-height: 100px;
+  padding: 16px;
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid var(--gray-dark);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Desktop: 3 in row (default) */
+
+/* Tablet: two in a row */
+/* For tablet we wrap and set basis ~50% */
+@media (max-width: 991.98px) {
+  .boxes { flex-wrap: wrap; }
+  .box { flex: 1 1 calc(50% - 12px); } /* two per row */
+}
+
+/* Mobile: stacked */
+@media (max-width: 575.98px) {
+  .boxes { flex-direction: column; gap: 10px; }
+  .box { flex: none;
