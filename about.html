@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Lumina Studio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner d-flex align-items-center justify-content-between">
+<a href="index.html" class="logo">Lumina<span>Studio</span></a>
+<nav class="main-nav">
+<ul class="nav-list d-flex">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<main class="container about-main">
+<h1>About Lumina Studio</h1>
+<p>Lumina is a creative photo and video studio focused on storytelling. Our team combines cinematic technique with a documentary eye.</p>
+
+
+<section class="team">
+<h2>Meet the Team</h2>
+<div class="row">
+<div class="col-12 col-md-4 card">
+<h3>Alex Rivera — Lead Photographer</h3>
+<p>Specializes in portrait and editorial photography.</p>
+</div>
+<div class="col-12 col-md-4 card">
+<h3>Maya Chen — Videographer</h3>
+<p>Experienced in event and commercial video production.</p>
+</div>
+<div class="col-12 col-md-4 card">
+<h3>Samir Patel — Colorist</h3>
+<p>Post-production specialist for color grading and retouching.</p>
+</div>
+</div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner d-flex justify-content-between align-items-center">
+<div>
+<p>&copy; <span id="year2"></span> Lumina Photo & Video Studio</p>
+</div>
+<div class="socials">
+<a href="#">Instagram</a> | <a href="#">Facebook</a>
+</div>
+</div>
+</footer>
+
+
+<script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>

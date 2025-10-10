@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — Lumina Studio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner d-flex align-items-center justify-content-between">
+<a href="index.html" class="logo">Lumina<span>Studio</span></a>
+<nav class="main-nav">
+<ul class="nav-list d-flex">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<main class="container portfolio-main">
+<h1>Portfolio</h1>
+<p>Selected work across studio, event and commercial shoots.</p>
+
+
+<section class="gallery-grid">
+<div class="grid">
+<!-- Replace src with your images under /assets/ and keep loading="lazy" -->
+<div class="card"><img src="/assets/portfolio1.jpg" alt="Portfolio 1" loading="lazy"></div>
+<div class="card"><img src="/assets/portfolio2.jpg" alt="Portfolio 2" loading="lazy"></div>
+<div class="card"><img src="/assets/portfolio3.jpg" alt="Portfolio 3" loading="lazy"></div>
+<div class="card"><img src="/assets/portfolio4.jpg" alt="Portfolio 4" loading="lazy"></div>
+<div class="card"><img src="/assets/portfolio5.jpg" alt="Portfolio 5" loading="lazy"></div>
+<div class="card"><img src="/assets/portfolio6.jpg" alt="Portfolio 6" loading="lazy"></div>
+</div>
+</section>
+
+
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner d-flex justify-content-between align-items-center">
+<div>
+<p>&copy; <span id="year4"></span> Lumina Photo & Video Studio</p>
+</div>
+<div class="socials">
+<a href="#">Instagram</a> | <a href="#">Facebook</a>
+</div>
+</div>
+</footer>
+
+
+<script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
+</body>
+</html>
