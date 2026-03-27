@@ -1,0 +1,255 @@
+:root {
+  color-scheme: dark;
+  --bg: #000;
+  --fg: #f5f5f5;
+  --muted: #999;
+  --border-subtle: #222;
+  --accent: #fff;
+  --transition-fast: 180ms ease-out;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;           /* Изменено для мобильных */
+  background: #000;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;               /* Центрируем на мобильных */
+}
+
+.brand-title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+}
+
+.brand-subtitle {
+  margin: 0;
+}
+
+/* ====================== ГАЛЕРЕЯ ====================== */
+.gallery-section {
+  flex: 1;
+  min-height: 320px;
+}
+
+.gallery-mask {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: #050505;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;     /* Добавлено для удобного скролла */
+  scroll-behavior: smooth;
+}
+
+.gallery-mask::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  padding: 8px;
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  width: 85vw;                       /* На мобильных почти на всю ширину */
+  max-width: 480px;
+  scroll-snap-align: center;         /* Прилипание фото */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  filter: grayscale(90%) contrast(1.1);
+  transition: all var(--transition-fast);
+}
+
+.gallery-item img:hover,
+.gallery-item img:active {
+  transform: scale(1.04);
+  filter: grayscale(20%) contrast(1.05);
+}
+
+/* ====================== КОНТЕНТ ====================== */
+.intro-section {
+  padding: 20px 0;
+}
+
+.intro-text {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #e0e0e0;
+}
+
+.intro-text h2 {
+  margin-bottom: 12px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+/* Sidebar → становится верхним меню на мобильных */
+.sidebar {
+  background: #111;
+  border-top: 1px solid var(--border-subtle);
+  padding: 16px 20px;
+}
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+  flex-wrap: wrap;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu a {
+  color: var(--muted);
+  padding: 6px 12px;
+  transition: color var(--transition-fast);
+}
+
+.menu a:hover,
+.menu a.active {
+  color: var(--fg);
+}
+
+/* ====================== ВИДЕО ====================== */
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ====================== МЕДИА-ЗАПРОСЫ (Desktop) ====================== */
+@media (min-width: 1024px) {
+  .page {
+    flex-direction: row;
+    min-height: 720px;
+    border-radius: 24px;
+  }
+
+  .main {
+    max-width: calc(100% - 320px);
+    padding: 32px 40px;
+  }
+
+  .sidebar {
+    flex: 0 0 320px;
+    border-left: 1px solid var(--border-subtle);
+    border-top: none;
+    padding: 32px 28px;
+    background: linear-gradient(180deg, #222222 0, #0f0f0f 40%, #050505 100%);
+  }
+
+  .menu ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .brand {
+    text-align: left;
+  }
+
+  .gallery-item {
+    width: min(30vw, 480px);
+  }
+
+  .intro-section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 19px;
+  }
+
+  .gallery-item {
+    width: 92vw;
+  }
+
+  .main {
+    padding: 16px 12px;
+    gap: 24px;
+  }
+}
